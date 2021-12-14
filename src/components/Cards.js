@@ -39,9 +39,9 @@ function Cards({ refProp }) {
 
   const cardArray = [amazon, weatherApp, form, dashboard];
   const [mainImage, setMainImage] = useState(cardArray[0]);
-  const [secondImage, setSecondImage] = useState(cardArray[1]);
-  const [thirdImage, setThirdImage] = useState(cardArray[2]);
-  const [fourthImage, setFourthImage] = useState(cardArray[3]);
+  // const [secondImage, setSecondImage] = useState(cardArray[1]);
+  // const [thirdImage, setThirdImage] = useState(cardArray[2]);
+  // const [fourthImage, setFourthImage] = useState(cardArray[3]);
 
   useEffect(() => {
     for (let i = 0; i < cardArray.length; i++) {
@@ -71,22 +71,22 @@ function Cards({ refProp }) {
           </ul>
           <ul className="cards__items">
             <CardItem
-              src={secondImage.src}
-              text={secondImage.text}
-              label={secondImage.label}
-              path={secondImage.path}
+              src={cardArray[1].src}
+              text={cardArray[1].text}
+              label={cardArray[1].label}
+              path={cardArray[1].path}
             />
             <CardItem
-              src={thirdImage.src}
-              text={thirdImage.text}
-              label={thirdImage.label}
-              path={thirdImage.path}
+              src={cardArray[2].src}
+              text={cardArray[2].text}
+              label={cardArray[2].label}
+              path={cardArray[2].path}
             />
             <CardItem
-              src={fourthImage.src}
-              text={fourthImage.text}
-              label={fourthImage.label}
-              path={fourthImage.path}
+              src={cardArray[3].src}
+              text={cardArray[3].text}
+              label={cardArray[3].label}
+              path={cardArray[3].path}
             />
           </ul>
         </div>
