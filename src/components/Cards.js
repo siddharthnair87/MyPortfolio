@@ -37,25 +37,24 @@ function Cards({ refProp }) {
     "/projects"
   );
 
-  const cardArray = [amazon, weatherApp, form, dashboard];
-  const [mainImage, setMainImage] = useState(cardArray[0]);
   // const [secondImage, setSecondImage] = useState(cardArray[1]);
   // const [thirdImage, setThirdImage] = useState(cardArray[2]);
   // const [fourthImage, setFourthImage] = useState(cardArray[3]);
 
+  const cardArray = [amazon, weatherApp, form, dashboard];
+  const [mainImage, setMainImage] = useState(cardArray[0]);
   useEffect(() => {
     for (let i = 0; i < cardArray.length; i++) {
-      // console.log(i);
       const interval = setInterval(() => {
         if (cardArray[i] === undefined) {
           i = 0;
         }
-        setMainImage(cardArray[i++]);
+        setMainImage(cardArray[i]);
       }, 2500);
       return () => clearInterval(interval);
     }
-  });
-
+  }, []);
+  console.log(mainImage);
   return (
     <div className="cards" id="card-component" ref={refProp}>
       <h1>Check out these selected projects!</h1>
