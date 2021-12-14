@@ -54,7 +54,7 @@ function Cards({ refProp }) {
       }, 2500);
       return () => clearInterval(interval);
     }
-  }, []);
+  });
 
   return (
     <div className="cards" id="card-component" ref={refProp}>
