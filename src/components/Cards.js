@@ -25,13 +25,13 @@ function Cards({ refProp }) {
     "/projects"
   );
   const dashboard = new CardObject(
-    "images/dashboard.png",
+    "images/dash.png",
     "Beyond Bootcamp Dashboard",
     "React",
     "/projects"
   );
   const weatherApp = new CardObject(
-    "images/weatherApp.png",
+    "images/weatherapp.png",
     "Javascript Weather App",
     "Vanilla JavaScript",
     "/projects"
