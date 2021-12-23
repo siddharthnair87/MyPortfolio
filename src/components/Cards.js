@@ -37,18 +37,13 @@ function Cards({ refProp }) {
     "/projects"
   );
 
-  // const [secondImage, setSecondImage] = useState(cardArray[1]);
-  // const [thirdImage, setThirdImage] = useState(cardArray[2]);
-  // const [fourthImage, setFourthImage] = useState(cardArray[3]);
-
   const cardArray = [amazon, weatherApp, form, dashboard];
-  // const [mainImage, setMainImage] = useState(cardArray[0]);
   let [count, setCount] = useState(0);
 
   useEffect(() => {
     const intervalId = setInterval(() => {
       if (count < 3) {
-        setCount(count + 1);
+        setCount((prevCount) => prevCount + 1);
       } else {
         setCount(0);
       }
