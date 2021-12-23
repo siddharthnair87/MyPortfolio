@@ -43,18 +43,20 @@ function Cards({ refProp }) {
 
   const cardArray = [amazon, weatherApp, form, dashboard];
   const [mainImage, setMainImage] = useState(cardArray[0]);
+  let [count, setCount] = useState(0);
+
   useEffect(() => {
-    for (let i = 0; i < cardArray.length; i++) {
-      const interval = setInterval(() => {
-        if (cardArray[i] === undefined) {
-          i = 0;
-        }
-        setMainImage(cardArray[i]);
-      }, 2500);
-      return () => clearInterval(interval);
-    }
+    setInterval(() => {
+      setCount((prevCount) => prevCount + 1);
+    }, 2500);
+    console.log(count);
   }, []);
-  console.log(mainImage);
+  // console.log("count", count);
+  useEffect(() => {
+    if (count < 4) {
+      setMainImage(cardArray[count]);
+    } else setCount(0);
+  }, [count]);
   return (
     <div className="cards" id="card-component" ref={refProp}>
       <h1>Check out these selected projects!</h1>
